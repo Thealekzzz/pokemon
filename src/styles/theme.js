@@ -1,21 +1,27 @@
-import { createMuiTheme } from "@mui/material";
+import { createTheme } from '@mui/material/styles';
 
-export const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#3f51b5',
-    },
-    secondary: {
-      main: '#f50057',
-    },
-  },
+
+export const theme = createTheme({
   typography: {
-    fontSize: 14,
-    fontWeightBold: 700,
-    fontFamily: 'Roboto',
+    fontFamily: 'Raleway, sans-serif',
   },
-  spacing: 8,
-  shape: {
-    borderRadius: 4,
-  },  
+  palette: {
+    paper: {
+      main: '#FFF'
+    },
+    background: {
+      black: '#000',
+    },
+    text: {
+      white: '#FFF',
+      light: '#A0A0A0',
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      md: 900,
+      lg: 1280,
+    },
+  },
 });
