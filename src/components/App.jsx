@@ -1,4 +1,4 @@
-import { Container } from '@mui/system';
+import { Container } from '@mui/material';
 import Pokemon from './Pokemon';
 import Header from './Header';
 
