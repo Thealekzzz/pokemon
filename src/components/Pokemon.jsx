@@ -5,13 +5,11 @@ import {
   Box,
   Chip,
   CircularProgress,
-  Container,
   Snackbar,
   Typography,
 } from '@mui/material';
 
 import { baseURL } from '../consts/urls';
-import Header from './Header';
 
 const Pokemon = () => {
   const [pokemons, setPokemons] = useState(null);
@@ -76,17 +74,7 @@ const Pokemon = () => {
   }, [selectedPokemon]);
 
   return (
-    <Container
-      disableGutters
-      sx={{
-        boxSizing: 'border-box',
-        py: 12.5,
-        px: 18.75,
-      }}
-    >
-
-      <Header />
-
+    <>
       {!pokemons ? (
         <Box sx={{
           width: 'fit-content',
@@ -100,18 +88,29 @@ const Pokemon = () => {
           sx={{
             display: 'flex',
             gap: 1.5,
-            flexDirection: 'row',
+            flexDirection: {
+              xs: 'column',
+              md: 'row'
+            },
             alignItems: 'center',
 
           }}
         >
           <Box
             sx={{
-              width: 484,
+              width: '100%',
               display: 'flex',
+              justifyContent: {
+                xs: 'center',
+                md: 'flex-start',
+              },
               flexWrap: 'wrap',
               rowGap: 1.25,
               columnGap: 0.75,
+              mb: {
+                xs: 4,
+                md: 0,
+              },
             }}
           >
             {pokemons.map((pokemon) => (
@@ -137,7 +136,13 @@ const Pokemon = () => {
             sx={{
               boxSizing: 'border-box',
               height: 500,
-              width: 484,
+              width: {
+                xs: '100%',
+                md: 484,
+              },
+              minWidth: {
+                md: 484,
+              },
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'flex-start',
@@ -244,7 +249,7 @@ const Pokemon = () => {
           {errorMessage}
         </Alert>
       </Snackbar>
-    </Container>
+    </>
   );
 };
 

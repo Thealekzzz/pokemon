@@ -1,10 +1,28 @@
+import { Container } from '@mui/system';
 import Pokemon from './Pokemon';
+import Header from './Header';
 
 function App() {
-
   return (
     <>
-      <Pokemon />
+      <Container
+        disableGutters
+        sx={{
+          boxSizing: 'border-box',
+          py: {
+            xs: 5,
+            md: 12.5
+          },
+          px: {
+            xs: 1,
+            md: 6,
+            lg: 18.75
+          },
+        }}
+      >
+        <Header />
+        <Pokemon />
+      </Container>
     </>
   )
 }
